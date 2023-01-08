@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="516.0" prefWidth="495.0" style="-fx-border-width: 10px; -fx-border-color: #2c3136;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.smo.PopUp">
+   <children>
+      <Button fx:id="btnDone" layoutX="165.0" layoutY="406.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="165.0" text="готово" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Button>
+      <Text layoutX="84.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="номер вашего талона:" textAlignment="CENTER" wrappingWidth="326.3349609375">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblNum" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="188.0" prefHeight="141.0" prefWidth="297.0" text="00" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="96.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>
