@@ -117,4 +117,18 @@ public class _DatabaseHandler extends _Configs{
     }
 
 
+//    sql команды для дальнейшей работы
+    /*
+    вывод свободного человека в очереди
+
+    SELECT talon.id_talon, service.title
+    FROM talon
+    JOIN service ON talon.id_service = service.id_service
+    WHERE talon.talon_status LIKE "%waiting"
+    ORDER BY talon.id_talon
+    LIMIT 1
+    */
+
+//    UPDATE talon SET talon_status = "*значение статуса*" WHERE id_talon = *id талона*
+
 }
