@@ -1,6 +1,8 @@
 package com.example.smo;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,18 +35,35 @@ public class Manager {
     private Text lbQueueNumber;
 
     @FXML
-    private Label lbServiceName;
+    private Text lbServiceName;
 
     @FXML
-    void initialize() {
+    void initialize() throws SQLException {
+        _DatabaseHandler dbHandler = new _DatabaseHandler();
+
+
         lbFirstName.setText(AutorizScaneController.FirstName);
         lbLastName.setText(AutorizScaneController.LastName);
 
-        btnInvite.setOnAction(event ->{
+        btnInvite.setOnAction(event ->{ //ивент на отображение данных в окне
+            ResultSet result = dbHandler.getFirstEntryNum();
+            while (true) {
+                try {
+                    if (!result.next()) break;
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    lbQueueNumber.setText(result.getString(_Const.TALON_ID)); // отображение номеры талона
+                    lbServiceName.setText(result.getString(_Const.SERVICE_TITLE)); // отображение названия услуги
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
 
         });
     }
 
-//    обработчик на вызов клиента (первый из списка который имеет стату "вэйтинг")
+//    обработчик на вызов клиента (первый из списка который имеет стату "вэйтинг") - done
 //    обработчик на нажатие изменени статуса талона на "доне"(таким образом талон больше не вызывается)
 }

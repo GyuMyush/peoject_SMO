@@ -103,7 +103,7 @@ public class _DatabaseHandler extends _Configs{
         }
     }
 
-    public ResultSet getLastEntryNum() {
+    public ResultSet getLastEntryNum() { //вывод последнего добавленного в очередь
         ResultSet resLast = null;
         String select = "SELECT " + _Const.TALON_ID + " FROM " + _Const.TALON_TABLE + " ORDER BY " + _Const.TALON_ID + " DESC LIMIT 1";
 
@@ -116,6 +116,19 @@ public class _DatabaseHandler extends _Configs{
         return resLast;
     }
 
+    public ResultSet getFirstEntryNum() { //вызов первого клиента в очереди
+        ResultSet resFirst = null;
+        String select = "SELECT talon.id_talon, service.title FROM talon JOIN service ON talon.id_service = service.id_service WHERE talon.talon_status LIKE '%waiting' ORDER BY talon.id_talon LIMIT 1";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(String.valueOf(select));
+            resFirst = prSt.executeQuery();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return resFirst;
+
+    }
 
 //    sql команды для дальнейшей работы
     /*

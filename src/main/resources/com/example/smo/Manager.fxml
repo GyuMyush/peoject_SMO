@@ -9,12 +9,12 @@
    <children>
       <Text fx:id="lbFirstName" layoutX="176.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
       <Text fx:id="lbLastName" layoutX="249.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
-      <Text layoutX="37.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="КЛИЕНТ">
+      <Text layoutX="184.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="КЛИЕНТ" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Text>
-      <Text fx:id="lbQueueNumber" layoutX="121.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="212.6259765625">
+      <Text fx:id="lbQueueNumber" layoutX="121.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**" textAlignment="CENTER" wrappingWidth="212.6259765625">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -27,7 +27,7 @@
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Text>
-      <Text layoutX="17.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="420.13671875">
+      <Text fx:id="lbServiceName" layoutX="17.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="название услуги" textAlignment="CENTER" wrappingWidth="420.13671875">
          <font>
             <Font size="16.0" />
          </font>
