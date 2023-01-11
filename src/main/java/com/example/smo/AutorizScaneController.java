@@ -35,6 +35,7 @@ public class AutorizScaneController {
 
     public static String FirstName = "";
     public static String LastName = "";
+    public static String idManager = "";
 
     @FXML
     void initialize() {
@@ -69,6 +70,7 @@ public class AutorizScaneController {
             userRole = result.getString(_Const.USERS_ROLE);
             FirstName = result.getString(_Const.USERS_FIRSTNAME);
             LastName = result.getString(_Const.USERS_LASTNAME);
+            idManager = result.getString(_Const.USERS_ID);
         }
 
 

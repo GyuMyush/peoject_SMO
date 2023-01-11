@@ -130,6 +130,18 @@ public class _DatabaseHandler extends _Configs{
 
     }
 
+    public void updateManagerToTalon(String idManager, String idTalon) {
+        String insert = "UPDATE talon SET talon_status = 'processing', id_manager = '" + idManager + "' WHERE id_talon = '" + idTalon + "'"; // дописать
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(insert);
+
+            prSt.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 //    sql команды для дальнейшей работы
     /*
     вывод свободного человека в очереди

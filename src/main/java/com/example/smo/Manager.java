@@ -56,6 +56,10 @@ public class Manager {
                 try {
                     lbQueueNumber.setText(result.getString(_Const.TALON_ID)); // отображение номеры талона
                     lbServiceName.setText(result.getString(_Const.SERVICE_TITLE)); // отображение названия услуги
+
+                    if (result.getString(_Const.TALON_ID) != "") {
+                        dbHandler.updateManagerToTalon(AutorizScaneController.idManager, result.getString(_Const.TALON_ID));
+                    }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
@@ -66,4 +70,7 @@ public class Manager {
 
 //    обработчик на вызов клиента (первый из списка который имеет стату "вэйтинг") - done
 //    обработчик на нажатие изменени статуса талона на "доне"(таким образом талон больше не вызывается)
+
+
+//    новое окно с тало с лист вью
 }
