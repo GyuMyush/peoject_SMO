@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="706.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="252.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="очередь" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="44.0" />
+               </font>
+            </Text>
+            <ListView fx:id="queueList" layoutX="19.0" layoutY="71.0" prefHeight="625.0" prefWidth="667.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Pane>
+   </center>
+</BorderPane>
